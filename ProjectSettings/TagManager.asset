@@ -7,6 +7,7 @@ TagManager:
   - Moveable
   - Coin
   - PuzzleObject
+  - PZ1Totem
   layers:
   - Default
   - TransparentFX

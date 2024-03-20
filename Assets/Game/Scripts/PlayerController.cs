@@ -47,6 +47,10 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.gm.ShowPUZZLE1Guide();
         }
+        else
+        {
+            GameManager.gm.HidePUZZLE1Guide();
+        }
     }
     private void FixedUpdate()
     {
@@ -117,8 +121,9 @@ public class PlayerController : MonoBehaviour
                 puzzleManager.HandleObjectCollision(other.gameObject);
             }
         }
-        if (other.CompareTag("PuzzleObject"))
+        if (other.CompareTag("PZ1Totem"))
         {
+            Debug.Log("Teste");
             pressFcheck = true;
         }
     }

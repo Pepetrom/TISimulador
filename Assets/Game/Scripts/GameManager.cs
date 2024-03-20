@@ -50,4 +50,8 @@ public class GameManager : MonoBehaviour
     {
         puzzle1Panel.SetActive(true);
     }
+    public void HidePUZZLE1Guide()
+    {
+        puzzle1Panel.SetActive(false);
+    }
 }
