@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject puzzle1Panel;
     public static GameManager gm;
     public int score = 0;
     public Text scoreText;
@@ -20,6 +21,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    public void Start()
+    {
+        puzzle1Panel.SetActive(false);
     }
     public void ChangeScene(string scene)
     {
@@ -40,5 +45,9 @@ public class GameManager : MonoBehaviour
         {
             scoreText.text = "Coins: " + score.ToString();
         }
+    }
+    public void ShowPUZZLE1Guide()
+    {
+        puzzle1Panel.SetActive(true);
     }
 }

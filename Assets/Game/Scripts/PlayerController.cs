@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     Vector3 direction = new Vector3(0, 0, 0);
     public float speed = 1;
     public float pushForce = 1;
+    private bool pressFcheck = false;
     
 
     //Raycast
@@ -36,11 +37,16 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         characterController = GetComponent<CharacterController>();
+        pressFcheck = false;
     }
     void Update()
     {
         Interact();     
         direction = new Vector3(Input.GetAxis("Horizontal"), Mathf.Clamp(rb.velocity.y,-10,0), Input.GetAxis("Vertical"));
+        if(pressFcheck == true && Input.GetKey(KeyCode.F))
+        {
+            GameManager.gm.ShowPUZZLE1Guide();
+        }
     }
     private void FixedUpdate()
     {
@@ -110,6 +116,10 @@ public class PlayerController : MonoBehaviour
             {
                 puzzleManager.HandleObjectCollision(other.gameObject);
             }
+        }
+        if (other.CompareTag("PuzzleObject"))
+        {
+            pressFcheck = true;
         }
     }
 }
