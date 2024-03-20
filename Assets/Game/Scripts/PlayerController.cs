@@ -101,4 +101,15 @@ public class PlayerController : MonoBehaviour
         }
         return false;
     }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("PuzzleObject"))
+        {
+            Puzzle1 puzzleManager = FindObjectOfType<Puzzle1>();
+            if (puzzleManager != null)
+            {
+                puzzleManager.HandleObjectCollision(other.gameObject);
+            }
+        }
+    }
 }
