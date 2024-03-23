@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager gm;
     public int score = 0;
     public Text scoreText;
+    public Transform SpawnPoint;
     private void Awake()
     {
         if (gm == null)
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
     }
     public void ResetScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        PlayerController.pc.transform.position = SpawnPoint.position;
     }
     public void AddScore(int scoreValue) // pontuação definida pelo collector(script)
     {
