@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     Vector3 direction = new Vector3(0, 0, 0);
     public float speed = 1;
     public float pushForce = 1;
-    private bool pressFcheck = false;
     
 
     //Raycast
@@ -22,7 +21,6 @@ public class PlayerController : MonoBehaviour
     //PlayerAssets
     Animator animator;
     public Rigidbody rb;
-    Moveable ObjectBeingMoved;
 
     private void Awake()
     {
@@ -33,20 +31,12 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         characterController = GetComponent<CharacterController>();
-        pressFcheck = false;
     }
     void Update()
     {
-        Interact();     
+        //Interact();     
         direction = new Vector3(Input.GetAxis("Horizontal"), Mathf.Clamp(rb.velocity.y,-10,0), Input.GetAxis("Vertical"));
-        if(pressFcheck == true && Input.GetKey(KeyCode.F))
-        {
-            GameManager.gm.ShowPUZZLE1Guide();
-        }
-        else
-        {
-            GameManager.gm.HidePUZZLE1Guide();
-        }
+        OpenNoteBook();
     }
     private void FixedUpdate()
     {
@@ -57,6 +47,27 @@ public class PlayerController : MonoBehaviour
             Rotate();
         }
     }
+    public void Die()
+    {
+        Debug.Log("Morreu");
+        GameManager.gm.ResetScene();
+    }
+    private void OpenNoteBook()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+                if (GameManager.gm.notebook.activeSelf)
+                {
+                    GameManager.gm.HideNotebook();
+                }
+                else
+                {
+                    GameManager.gm.ShowNotebook();
+                }         
+        }
+        
+    }
+    /*
     private void Interact()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -84,12 +95,12 @@ public class PlayerController : MonoBehaviour
 
             }
         }
-    }
+    }*/
     private void Rotate()
     {
         PlayerCharacter.transform.LookAt(new Vector3(PlayerCharacter.transform.position.x + Input.GetAxis("Horizontal"), PlayerCharacter.transform.position.y, PlayerCharacter.transform.position.z + Input.GetAxis("Vertical")));
     }
-    
+    /*
     public bool PlayerRaycast()
     {
         if (Physics.Raycast(PlayerCharacter.transform.position, PlayerCharacter.transform.forward, out playerHit, 2, interactable))
@@ -106,7 +117,7 @@ public class PlayerController : MonoBehaviour
             return true;
         }
         return false;
-    }
+    }*/
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("PuzzleObject"))
@@ -120,7 +131,9 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("PZ1Totem"))
         {
             Debug.Log("Teste");
-            pressFcheck = true;
+            GameManager.gm.ShowNotebook();
+            GameManager.gm.PickTip(0);
+            Destroy(other.gameObject);
         }
     }
 }

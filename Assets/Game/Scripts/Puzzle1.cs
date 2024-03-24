@@ -5,6 +5,7 @@ public class Puzzle1 : MonoBehaviour
     public GameObject[] objects;
     public int[] ids;
     private int lastDestroyed = 0;
+    public Gate gate;
 
     void Start()
     {
@@ -28,6 +29,7 @@ public class Puzzle1 : MonoBehaviour
                     if (lastDestroyed == ids[ids.Length - 1])
                     {
                         Debug.Log("Puzzle resolvido!");
+                        gate.Open();
                         GameManager.gm.AddScore(10);
                     }
                 }

@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject puzzle1Panel;
+    public GameObject notebook;
+    public GameObject[] tips;
     public static GameManager gm;
     public int score = 0;
     public Text scoreText;
@@ -22,10 +23,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-    public void Start()
-    {
-        puzzle1Panel.SetActive(false);
     }
     public void ChangeScene(string scene)
     {
@@ -47,12 +44,16 @@ public class GameManager : MonoBehaviour
             scoreText.text = "Coins: " + score.ToString();
         }
     }
-    public void ShowPUZZLE1Guide()
+    public void ShowNotebook()
     {
-        puzzle1Panel.SetActive(true);
+        notebook.SetActive(true);
     }
-    public void HidePUZZLE1Guide()
+    public void HideNotebook()
     {
-        puzzle1Panel.SetActive(false);
+        notebook.SetActive(false);
+    }
+    public void PickTip(int tip)
+    {
+        tips[tip].SetActive(true);
     }
 }
