@@ -23,19 +23,19 @@ public class PatrolState : IEnemyAController
 
     public void OnUpdate()
     {
-        if(Time.time > time)
+        if (Time.time > time)
         {
             dir = Random.onUnitSphere;
-            dir.y = 0;
             time = Time.time + 1;
         }
         controller.Move(dir);
-        if(controller.energy < 0)
+        if (controller.energy < 0)
         {
             controller.SetState(new RestState(controller));
         }
         if (controller.CanSeeTarget())
         {
+            controller.roomObserver.PlayerInRoom();
             controller.SetState(new FollowState(controller));
         }
         Debug.Log("Patrolling");

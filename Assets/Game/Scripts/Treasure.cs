@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class Treasure : MonoBehaviour
 {
+    public bool cursed;
     public int treasureID;
 }

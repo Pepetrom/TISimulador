@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public int score = 0;
     public Text scoreText;
     public Transform SpawnPoint;
+    public bool cursed = false;
     private void Awake()
     {
         if (gm == null)

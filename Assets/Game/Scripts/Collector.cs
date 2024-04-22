@@ -9,6 +9,10 @@ public class Collector : MonoBehaviour
     {
         if (collision.collider.CompareTag("Coin"))
         {
+            if (collision.collider.GetComponent<Treasure>().cursed)
+            {
+                GameManager.gm.cursed = true;
+            }
             Destroy(collision.gameObject);
             GameManager.gm.AddScore(scoreValue);
         }

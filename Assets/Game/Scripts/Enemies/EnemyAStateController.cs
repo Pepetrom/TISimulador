@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyAStateController : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class EnemyAStateController : MonoBehaviour
     public float maxEnergy;
     [SerializeField] float recharbleRate;
     [SerializeField] float maxDistancetoSee;
-
+    public RoomObserver roomObserver;
+    
     private void Start()
     {
         SetState(new PatrolState(this));
@@ -30,6 +32,7 @@ public class EnemyAStateController : MonoBehaviour
     public void Move(Vector3 dir)
     {
         energy -= Time.fixedDeltaTime;
+        dir.y = 0;
         transform.position += dir * speed * Time.fixedDeltaTime;
     }
     public float RechargeEnergy()
@@ -45,5 +48,4 @@ public class EnemyAStateController : MonoBehaviour
     {
         return (TargetDir().magnitude < maxDistancetoSee);
     }
-
 }
