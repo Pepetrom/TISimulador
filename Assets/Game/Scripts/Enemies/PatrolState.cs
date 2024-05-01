@@ -35,7 +35,7 @@ public class PatrolState : IEnemyAController
         }
         if (controller.CanSeeTarget())
         {
-            controller.roomObserver.PlayerInRoom();
+            controller.roomObserver?.PlayerInRoom();
             controller.SetState(new FollowState(controller));
         }
         Debug.Log("Patrolling");

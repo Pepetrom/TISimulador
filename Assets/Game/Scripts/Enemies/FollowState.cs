@@ -27,10 +27,6 @@ public class FollowState : IEnemyAController
         {
             controller.SetState(new RestState(controller));
         }
-        /*if (!controller.CanSeeTarget())
-        {
-            controller.SetState(new PatrolState(controller));
-        }*/
         Debug.Log("Chasing");
     }
 }
