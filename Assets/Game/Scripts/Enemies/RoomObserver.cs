@@ -5,6 +5,7 @@ using UnityEngine;
 public class RoomObserver : MonoBehaviour
 {
     public EnemyAStateController[] enemies;
+    public Transform[] limits;
     private void Start()
     {
         for (int i = 0; i < enemies.Length; i++)
