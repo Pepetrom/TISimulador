@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2454857862011823822}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.29298177, z: -0, w: 0.95611805}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0795, y: 1.0795, z: 1.0795}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6514386826191682283}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -34.073, z: 0}
 --- !u!33 &548204328920393349
 MeshFilter:
@@ -108,13 +108,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3262567834556968350}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.13173674, z: -0, w: 0.9912848}
   m_LocalPosition: {x: -0.819, y: 0, z: -0.344}
   m_LocalScale: {x: 1, y: 1.1551, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6514386826191682283}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 15.14, z: 0}
 --- !u!33 &509937556300655136
 MeshFilter:
@@ -191,13 +191,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3384457746030266766}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.3248513, z: -0, w: 0.94576514}
   m_LocalPosition: {x: -0.42, y: 0, z: -0.407}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6514386826191682283}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -37.913, z: 0}
 --- !u!33 &5715075080445578908
 MeshFilter:
@@ -274,13 +274,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6829380894480983512}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.28939593, z: -0, w: 0.9572095}
   m_LocalPosition: {x: -0.199, y: 0, z: -0.791}
   m_LocalScale: {x: 0.94027853, y: 1.0972, z: 1.0972}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6514386826191682283}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 33.644, z: 0}
 --- !u!33 &5250192229686709474
 MeshFilter:
@@ -357,13 +357,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7026690768728054613}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.24953403, z: -0, w: 0.9683661}
   m_LocalPosition: {x: 0, y: 0, z: -0.407}
   m_LocalScale: {x: 1.0889, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6514386826191682283}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 28.9, z: 0}
 --- !u!33 &4227304695303488714
 MeshFilter:
@@ -440,13 +440,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7765641817979117970}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.3020283, z: -0, w: 0.9532989}
   m_LocalPosition: {x: -0.42, y: 0, z: -0.039}
   m_LocalScale: {x: 0.74367, y: 0.74367, z: 0.74367}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6514386826191682283}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 35.159, z: 0}
 --- !u!33 &3590774639084082651
 MeshFilter:
@@ -507,6 +507,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6514386826191682283}
+  - component: {fileID: 6528966232571922561}
   m_Layer: 0
   m_Name: CactusGroup
   m_TagString: Untagged
@@ -521,7 +522,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8197240017140753552}
-  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -534,4 +534,18 @@ Transform:
   - {fileID: 8580157438740567472}
   - {fileID: 3648216619154353295}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6528966232571922561
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8197240017140753552}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3966463, y: 1.0183482, z: 1.0327984}
+  m_Center: {x: -0.44424188, y: 0.38397408, z: -0.37351435}
