@@ -15,21 +15,10 @@ public class RoomObserver : MonoBehaviour
     }
     public void PlayerInRoom()
     {
-        if (GameManager.gm.cursed)
-        {
-            for (int i = 0; i < enemies.Length; i++)
-            {
-                enemies[i].energy = enemies[i].maxEnergy * 2;
-                enemies[i].SetState(new FollowState(enemies[i]));
-            }         
-        }
-        else
-        {
             for (int i = 0; i < enemies.Length; i++)
             {
                 enemies[i].energy = enemies[i].maxEnergy;
                 enemies[i].SetState(new FollowState(enemies[i]));
-            }
-        }        
+            }              
     }
 }

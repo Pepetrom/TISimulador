@@ -12,6 +12,8 @@ public class Collector : MonoBehaviour
             if (collision.collider.GetComponent<Treasure>().cursed)
             {
                 GameManager.gm.cursed = true;
+                GameManager.gm.anubisRoom.enemies[0].speed = 6;
+                GameManager.gm.anubisRoom.enemies[1].speed = 6;
             }
             Destroy(collision.gameObject);
             GameManager.gm.AddScore(scoreValue);

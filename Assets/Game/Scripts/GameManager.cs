@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
     public Transform SpawnPoint;
     public bool cursed = false;
+    public RoomObserver anubisRoom;
     private void Awake()
     {
         if (gm == null)
