@@ -13,7 +13,6 @@ public class FollowState : IEnemyAController
     }
     public void OnEnter()
     {
-        Debug.Log("Start chasing");
     }
 
     public void OnExit()
@@ -27,6 +26,5 @@ public class FollowState : IEnemyAController
         {
             controller.SetState(new RestState(controller));
         }
-        Debug.Log("Chasing");
     }
 }

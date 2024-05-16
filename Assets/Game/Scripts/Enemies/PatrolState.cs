@@ -13,7 +13,6 @@ public class PatrolState : IEnemyAController
     }
     public void OnEnter()
     {
-        Debug.Log("Start Patrol");
         time = Time.time;
     }
 
@@ -38,6 +37,5 @@ public class PatrolState : IEnemyAController
             controller.roomObserver?.PlayerInRoom();
             controller.SetState(new FollowState(controller));
         }
-        Debug.Log("Patrolling");
     }
 }

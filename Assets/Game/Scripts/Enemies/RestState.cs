@@ -14,7 +14,6 @@ public class RestState : IEnemyAController
     
     public void OnEnter()
     {
-        Debug.Log("Start resting");
     }
 
     public void OnExit()
@@ -29,6 +28,5 @@ public class RestState : IEnemyAController
         {
             controller.SetState(new PatrolState(controller));
         }
-        Debug.Log("Resting");
     }
 }
